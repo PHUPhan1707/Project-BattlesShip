@@ -26,7 +26,7 @@
 }
 
 .destroyer {
-    background-color: brown;
+    background-color: #2aa57a;
 }
 
 .submarine {
@@ -34,7 +34,7 @@
 }
 
 .cruiser {
-    background-color: red;
+    background-color: #f700ff;
 }
 
 .battleship {
