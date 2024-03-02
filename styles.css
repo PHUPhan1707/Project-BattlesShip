@@ -40,27 +40,37 @@
 .battleship {
     background-color: aqua;
 }
-
+.carrier{
+    background-color: black;
+}
 .destroyer-preview {
     width: 20px;
     height: 10px;
     margin: 3px;
 }
 
+
 .submarine-preview {
     width: 30px;
     height: 10px;
     margin: 3px;
+
 }
+
 
 .cruiser-preview {
     width: 30px;
     height: 10px;
     margin: 3px;
 }
+.carrier-preview{
+    width:50px;
+    height: 10px;
+    margin: 3px;
+}
 
 .battleship-preview {
-    width: 50px;
+    width: 40px;
     height: 10px;
     margin: 3px;
 }
