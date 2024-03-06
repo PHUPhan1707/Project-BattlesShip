@@ -1,18 +1,37 @@
-
-
-h1 {
-  font-family: verdana;
-  font-size: 300%;
-  color:#1d2951;
-  padding: 20px
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
-p {
-  color: rgb(255, 0, 0);
-  font-family: 'Times New Roman';
-  font-size: 100%;
+body{
+    overflow-x: hidden;
 }
-
-
+.main-width{
+    width: 1400px;
+    max-width: 95%;
+    margin: 0 auto;
+}
+.hero{
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: radial-gradient(#57b8bc,20%,#259faf);
+    position: relative;
+}
+.hero header .logo h2 a{
+    display: block;
+    font-size: 64px;
+    font-weight: 800;
+    text-decoration: none;
+    color: white;
+}
+.hero header{
+    display: flex;
+    align-item: center;
+    justify-content: space-between;
+    padding: 40px 0 30px;
+}
 
 
 #gamesboard-container {
@@ -33,6 +52,21 @@ p {
     box-sizing: border-box;
     border: 1px solid hsla(0,0%,100%,0.5);
       
+}
+
+
+.content .main-text{
+    position: relative;
+    z-index: 2;
+    margin-bottom: 20px;
+}
+.content .main-text p{
+    max-width: 100% ;
+    width: 480px;
+    color:white;
+    line-height: 0.5;
+    font-size:15px;
+    margin-bottom: 50px;
 }
 
 
