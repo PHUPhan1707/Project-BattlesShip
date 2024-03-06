@@ -34,8 +34,8 @@ function createBoard(color, user) {
     gamesBoardContainer.append(gameBoardContainer);
 }
 
-createBoard('red', 'player');
-createBoard('pink', 'computer');
+createBoard('blue', 'player');
+createBoard('blue', 'computer');
 
 class Ship {
     constructor(name, length) {
