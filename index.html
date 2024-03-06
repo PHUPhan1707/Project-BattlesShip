@@ -4,19 +4,32 @@
     <meta charset="UTF-8">
     <title>JS Battleship</title>
     <link rel="stylesheet" href="styles.css"/>
-    
-</head>
-<body>
-   
-    <h1 id="Title">BATTLE SHIP GAME</h1>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
-<div id="game-info">
-    <p>Turn: <span id="turn-display"></span></p>
-    <p>Info:<span id="info"></span></p>
-</div>
+</head>
+
+<body>
+    <section class="hero">
+    <div class="main-width">
+        <header>
+            <div class="logo">
+                <h2><a href="#">BattleShip</a></h2>
+            </div>
+            
+        </header>
+
+            <div class="content">
+                <div class="main-text">
+                <p>Turn: <span id="turn-display"></span></p>
+                <p>Info:<span id="info"></span></p>
+                
+            </div>
 
 <div id="gamesboard-container"></div>
-<div class="option-container">
+    <div class="option-container">
 
     <div id="0" class="destroyer-preview destroyer" draggable="true"></div>
     <div id="1" class="submarine-preview submarine" draggable="true"></div>
@@ -25,12 +38,13 @@
     <div id="4" class="carrier-preview carrier" draggable="true"></div>
 </div>
 
-
+<div>
 <button id="flip-button">Flip your ships</button>
 <button id="start-button">Start Game</button>
 <script src="app.js"></script>
+</div>
 
 
-
+</section>
 </body>
 </html>
