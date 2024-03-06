@@ -16,7 +16,11 @@ body{
     height: 100%;
     width: 100%;
     min-height: 100vh;
-    background: radial-gradient(#57b8bc,20%,#259faf);
+
+    /*background: radial-gradient(circle, #57b8bc 20%, #259faf);*/
+    background: radial-gradient( #57b8bc 20%, #259faf);
+
+
     position: relative;
 }
 .hero header .logo h2 a{
@@ -134,11 +138,20 @@ body{
 .hover{
     background-color: grey;
 }
+#computer .destroyer,
+#computer .submarine,
+#computer .cruiser,
+#computer .battleship,
+#computer .carrier {
+    background-color: #1AA7EC;
+}
 .boom{
-    background-color: #ffffff;
-    background-image: url('Picture/X.png');
+    background-color: #1AA7EC!important;
+    background-image: url('Picture/X.png') ;
     background-size: cover;
 }
-.empty{
-    background-color: grey;
+.Miss{
+    background-color: #1AA7EC!important;
+    background-image: url('Picture/Hole.png');
+    background-size: cover;
 }
