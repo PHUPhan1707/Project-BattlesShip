@@ -171,6 +171,7 @@ function handleClick(e){
         if ( e.target.classList.contains('taken')){
             e.target.classList.add('boom')
             infoDisplay.textContent='You hit the computer ship'
+            let classess
         }
     }
 }
