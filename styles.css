@@ -1,10 +1,12 @@
 *{
+
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
 body{
+
     overflow-x: hidden;
 }
 .main-width{
@@ -30,25 +32,29 @@ body{
     text-decoration: none;
     color: white;
 }
-.hero header{
+.hero header {
     display: flex;
-    align-item: center;
-    justify-content: space-between;
-    padding: 40px 0 30px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* Align items in column */
+
 }
 
 
 #gamesboard-container {
+    transform: scale(2); /* Tăng kích thước lên 25% */
+
     width: 500px;
     display: flex;
     justify-content: space-between;
+    margin: 150px 411px ;
 }
 .game-board {
         width: 200px;
         height: 200px;
         display: flex;
         flex-wrap: wrap;
-        
+
     }
 .block {
     width: 20px;
@@ -77,13 +83,43 @@ body{
 
 
 .option-container {
+    transform: scale(2); /* Tăng kích thước lên 25% */
     width: 500px;
     height: 60px;
-    margin: 30px 0;
+
     background-color: #3f59d0;
     display: flex;
     align-items: center;
+    margin: 30px 411px ;
 }
+#flip-button {
+    background-color: #4CAF50; /* Màu nền */
+    border: none; /* Không có đường viền */
+    color: white; /* Màu chữ */
+    padding: 15px 32px; /* Kích thước lề bên trong */
+    text-align: center; /* Căn giữa văn bản */
+    text-decoration: none; /* Không gạch chân */
+    display: inline-block; /* Hiển thị là một khối inline */
+    font-size: 12px; /* Kích thước chữ */
+    margin: 10px 50px 0 161px ; /* Lề bên trong */
+    cursor: pointer; /* Con trỏ chuột */
+    border-radius: 8px; /* Độ cong của góc */
+}
+#start-button{
+    background-color: #4CAF50; /* Màu nền */
+    border: none; /* Không có đường viền */
+    color: white; /* Màu chữ */
+    padding: 15px 32px; /* Kích thước lề bên trong */
+    text-align: center; /* Căn giữa văn bản */
+    text-decoration: none; /* Không gạch chân */
+    display: inline-block; /* Hiển thị là một khối inline */
+    font-size: 12px; /* Kích thước chữ */
+    margin: 4px 2px; /* Lề bên trong */
+    cursor: pointer; /* Con trỏ chuột */
+    border-radius: 8px; /* Độ cong của góc */
+
+}
+
 
 .destroyer {
     background-color: #003d9f;
