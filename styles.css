@@ -1,10 +1,12 @@
 *{
+
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
 body{
+
     overflow-x: hidden;
 }
 .main-width{
@@ -16,7 +18,11 @@ body{
     height: 100%;
     width: 100%;
     min-height: 100vh;
-    background: radial-gradient(#57b8bc,20%,#259faf);
+
+    /*background: radial-gradient(circle, #57b8bc 20%, #259faf);*/
+    background: radial-gradient( #57b8bc 20%, #259faf);
+
+
     position: relative;
 }
 .hero header .logo h2 a{
@@ -26,12 +32,97 @@ body{
     text-decoration: none;
     color: white;
 }
-.hero header{
+.hero header {
     display: flex;
-    align-item: center;
-    justify-content: space-between;
-    padding: 40px 0 30px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* Align items in column */
+
 }
+.content .main-text{
+    position: relative;
+    z-index: 2;
+    margin-bottom: 50px;
+}
+
+.content .main-text h6{
+    font-size: 14px ;
+    font-weight: 400;
+    color: white;
+
+}
+
+.content .main-text h1{
+    font-size: 100px;
+    font-weight: 800;
+    line-height: 2;
+    color: white;
+    width: 50%;
+
+}
+.content .main-text h3{
+    font-size:18px;
+    font-weight: 600;
+    color: white;
+}
+.content .main-text p{
+    max-width: 50% ;
+    width: 480px;
+    color:white;
+    line-height: 1.5;
+    font-size:15px;
+    margin-bottom: 25px;
+}
+.content .main-text a{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    background: white;
+    border: 1px solid white;
+    padding: 9px 25px;
+    line-height: 1.4;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.content .main-text a:hover{
+    transform: scale(1.2);
+    border: 1px solid #259faf;
+    background-color: transparent;
+    color: white;
+    transition: .4s;
+}
+
+.content .social{
+    position: relative;
+    z-index: 2;
+    margin-top: 200px;
+    padding-bottom: 40px;
+
+}
+.content .social a{
+    display: inline-block;
+    color: #88f5ee;
+    margin-right: 25px;
+    font-size: 24px;
+}
+
+.content .social a:hover{
+    transform: scale(1.2);
+    transition: .4s;
+    color: white;
+}
+.imagelogo{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom:0 ;
+    right: 0;
+    text-align: right;
+
+}
+
 
 .content .main-text{
     position: relative;
@@ -108,16 +199,19 @@ body{
 }
 
 #gamesboard-container {
+    transform: scale(2); /* Tăng kích thước lên 25% */
+
     width: 500px;
     display: flex;
     justify-content: space-between;
+    margin: 150px 411px ;
 }
 .game-board {
         width: 200px;
         height: 200px;
         display: flex;
         flex-wrap: wrap;
-        
+
     }
 .block {
     width: 20px;
@@ -133,19 +227,56 @@ body{
     z-index: 2;
     margin-bottom: 20px;
 }
-
+.content .main-text p{
+    max-width: 100% ;
+    width: 480px;
+    color:white;
+    line-height: 0.5;
+    font-size:15px;
+    margin-bottom: 50px;
+}
 
 
 
 
 .option-container {
+    transform: scale(2); /* Tăng kích thước lên 25% */
     width: 500px;
     height: 60px;
-    margin: 30px 0;
+
     background-color: #3f59d0;
     display: flex;
     align-items: center;
+    margin: 30px 411px ;
 }
+#flip-button {
+    background-color: #4CAF50; /* Màu nền */
+    border: none; /* Không có đường viền */
+    color: white; /* Màu chữ */
+    padding: 15px 32px; /* Kích thước lề bên trong */
+    text-align: center; /* Căn giữa văn bản */
+    text-decoration: none; /* Không gạch chân */
+    display: inline-block; /* Hiển thị là một khối inline */
+    font-size: 12px; /* Kích thước chữ */
+    margin: 10px 50px 0 161px ; /* Lề bên trong */
+    cursor: pointer; /* Con trỏ chuột */
+    border-radius: 8px; /* Độ cong của góc */
+}
+#start-button{
+    background-color: #4CAF50; /* Màu nền */
+    border: none; /* Không có đường viền */
+    color: white; /* Màu chữ */
+    padding: 15px 32px; /* Kích thước lề bên trong */
+    text-align: center; /* Căn giữa văn bản */
+    text-decoration: none; /* Không gạch chân */
+    display: inline-block; /* Hiển thị là một khối inline */
+    font-size: 12px; /* Kích thước chữ */
+    margin: 4px 2px; /* Lề bên trong */
+    cursor: pointer; /* Con trỏ chuột */
+    border-radius: 8px; /* Độ cong của góc */
+
+}
+
 
 .destroyer {
     background-color: #003d9f;
@@ -200,11 +331,20 @@ body{
 .hover{
     background-color: grey;
 }
+#computer .destroyer,
+#computer .submarine,
+#computer .cruiser,
+#computer .battleship,
+#computer .carrier {
+    background-color: #1AA7EC;
+}
 .boom{
-    background-color: #ffffff;
-    background-image: url('Picture/X.png');
+    background-color: #1AA7EC!important;
+    background-image: url('Picture/X.png') ;
     background-size: cover;
 }
-.empty{
-    background-color: grey;
+.Miss{
+    background-color: #1AA7EC!important;
+    background-image: url('Picture/Hole.png');
+    background-size: cover;
 }
