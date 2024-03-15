@@ -191,3 +191,13 @@ body{
     background-image: url('Picture/Hole.png');
     background-size: cover;
 }
+
+.Missyou {
+    background-image: url('Picture/missyou.gif');
+    background-size: cover;
+    background-position: center;}
+
+.wabam {
+    background-image: url('Picture/boomomg.gif');
+    background-size: cover;
+    background-position: center;}

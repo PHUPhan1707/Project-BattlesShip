@@ -155,6 +155,7 @@ function highlightArea(startIndex,ship)
 }
 
 let gameOver = false
+let hasHitShip = false
 let playerTurn
 function startGame(){
     if (playerTurn === undefined) {
@@ -176,11 +177,22 @@ let computerHits=[]
 const playerSunkShips=[]
 const computerSunkShips=[]
 
+function showGIF() {
+    // Create a new image element
+    var gifImage = document.createElement('YOUR.gif');
+
+    // Set the source (URL) of the GIF
+    gifImage.src = 'Picture/YOUR.gif';
+
+
+    // Append the image element to a container in the HTML
+    document.getElementById('gifContainer').appendChild(gifImage);
+}
 
 function handleClick(e){
     if(!gameOver){
         if ( e.target.classList.contains('taken')) {
-            e.target.classList.add('boom')
+            e.target.classList.add('wabam')
             infoDisplay.textContent = 'You hit the computer ship'
             let classes = Array.from(e.target.classList)
             classes = classes.filter(className => className !== 'boom')
@@ -191,7 +203,7 @@ function handleClick(e){
         }
         if (!e.target.classList.contains('taken')){
             infoDisplay.textContent='You missed'
-            e.target.classList.add('Miss')
+            e.target.classList.add('Missyou')
 
         }
         playerTurn= false
@@ -206,9 +218,6 @@ function ComputerGO() {
         turnDisplay.textContent='Computer Turn !'
         infoDisplay.textContent='The computer is thinking.....'
 
-
-        let hasHitShip = false; // Biến để kiểm tra xem máy tính đã bắn trúng một tàu chiến hay không
-
         setTimeout(() => {
             // Nếu máy tính chưa bắn trúng tàu chiến
             if (!hasHitShip) {
@@ -216,17 +225,17 @@ function ComputerGO() {
                 const allBoardBlocks = document.querySelectorAll('#player div');
                 if (
                     allBoardBlocks[randomGO].classList.contains('taken') &&
-                    allBoardBlocks[randomGO].classList.contains('boom')
+                    allBoardBlocks[randomGO].classList.contains('wabam')
                 ) {
                     // Nếu ô đã được bắn trúng trước đó, gọi lại hàm ComputerGO để chọn ô khác
                     ComputerGO();
                     return;
                 } else if (
                     allBoardBlocks[randomGO].classList.contains('taken') &&
-                    !allBoardBlocks[randomGO].classList.contains('boom')
+                    !allBoardBlocks[randomGO].classList.contains('wabam')
                 ) {
                     // Nếu ô đã được chiếm nhưng chưa bị bắn trúng, đánh dấu là bắn trúng và hiển thị thông báo tương ứng
-                    allBoardBlocks[randomGO].classList.add('boom');
+                    allBoardBlocks[randomGO].classList.add('wabam');
                     infoDisplay.textContent = 'The computer hit your ship !';
                     let classes = Array.from(e.target.classList);
                     classes = classes.filter(className => className !== 'block');
@@ -234,21 +243,25 @@ function ComputerGO() {
                     classes = classes.filter(className => className !== 'taken');
                     computerHits.push(...classes);
                     checkScore('computer', computerHits, computerSunkShips);
-                    hasHitShip = true; // Đặt hasHitShip thành true để chỉ ra rằng máy tính đã bắn trúng
+                    hasHitShip = true;
+                    return;
+                    // Đặt hasHitShip thành true để chỉ ra rằng máy tính đã bắn trúng
                 } else {
                     // Nếu ô chưa được chiếm, đánh dấu là bắn trượt và hiển thị thông báo tương ứng
                     infoDisplay.textContent = 'The computer missed';
-                    allBoardBlocks[randomGO].classList.add('Miss');
+                    allBoardBlocks[randomGO].classList.add('Missyou');
                 }
-            } else {
+            }
+            else {
                 // Nếu máy tính đã bắn trúng tàu chiến, tiếp tục tìm các ô xung quanh ô đã bắn trúng
                 // và thực hiện các hành động tương ứng
                 // Viết mã xử lý tìm các ô xung quanh và thực hiện các hành động tương ứng ở đây
                 // Nếu ô hàng xóm đã được bắn trúng trước đó, tiếp tục tìm ô hàng xóm khác
-// Viết mã xử lý tiếp tục tìm ô hàng xóm khác ở đây
+                // Viết mã xử lý tiếp tục tìm ô hàng xóm khác ở đây
                 let nextAdjacentCell;
-                for (let i = 0; i < adjacentCells.length; i++) {
-                    if (!adjacentCells[i].classList.contains('boom')) {
+                let adjacentCell = 4;
+                for (let i = 0; i < adjacentCell; i++) {
+                    if (!adjacentCells[i].classList.contains('wabam')) {
                         nextAdjacentCell = adjacentCells[i];
                         break;
                     }
@@ -256,7 +269,7 @@ function ComputerGO() {
 
 // Nếu có ô hàng xóm không bị bắn trúng, chọn ô đó và thực hiện các hành động tương ứng
                 if (nextAdjacentCell) {
-                    nextAdjacentCell.classList.add('boom');
+                    nextAdjacentCell.classList.add('wabam');
                     infoDisplay.textContent = 'The computer hit your ship !';
                     let classes = Array.from(nextAdjacentCell.classList);
                     classes = classes.filter(className => className !== 'block');
@@ -272,7 +285,7 @@ function ComputerGO() {
                 }
 
             }
-        }, 3000); // Thời gian chờ trước khi máy tính thực hiện bắn
+        }, 1500); // Thời gian chờ trước khi máy tính thực hiện bắn
 
         setTimeout(()=>{
             playerTurn=true
