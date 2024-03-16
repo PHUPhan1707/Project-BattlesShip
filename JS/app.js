@@ -214,7 +214,41 @@ function handleClick(e){
     }
 }
 
+function checkScore(user,userHits,userSunkShips) {
+    function checkShip(shipName, shipLength) {
+        if (
+            userHits.filter(storedShipName => storedShipName === shipName).length === shipLength
+        ) {
+            infoDisplay.textContent = `You sunk the ${shipName}`
+            if (user === 'player') {
+                playerHits = userHits.filter(storedShipName => storedShipName !== shipName)
+            }
+            if (user === 'computer') {
+                computerHits = userHits.filter(storedShipName => storedShipName !== shipName)
+            }
+            userSunkShips.push(shipName)
+        }
+    }
 
+    checkShip('destroyer', 2)
+    checkShip('submarine', 3)
+    checkShip('cruiser', 3)
+    checkShip('battleship', 4)
+    checkShip('carrier', 5)
+
+    console.log('playerHits', playerHits)
+    console.log('playerSunkShips', playerSunkShips)
+    if (playerSunkShips.length === 5) {
+        infoDisplay.textContent = 'You sunk all the computer ships. Congratulations you win!'
+        gameOver = true
+    }
+    if (computerSunkShips.length === 5) {
+        infoDisplay.textContent = 'The computer sunk all your ships. You lose!'
+        gameOver = true
+
+        gameOver = true
+    }
+}
 function isValidCell(x, y) {
     return x >= 0 && x < boardSize && y >= 0 && y < boardSize;
 }
@@ -382,38 +416,6 @@ function ComputerGO() {
 }
 
 
-    function checkScore(user,userHits,userSunkShips){
-    function checkShip(shipName,shipLength) {
-        if (
-            userHits.filter(storedShipName => storedShipName === shipName).length === shipLength
-        ) {
-            infoDisplay.textContent = `You sunk the ${shipName}`
-            if (user === 'player') {
-                playerHits=userHits.filter(storedShipName=> storedShipName !== shipName)
-            }
-            if (user === 'computer') {
-                computerHits=userHits.filter(storedShipName=> storedShipName !== shipName)
-            }
-            userSunkShips.push(shipName)
-        }
-    }
-    checkShip('destroyer',2)
-    checkShip('submarine',3)
-    checkShip('cruiser',3)
-    checkShip('battleship',4)
-    checkShip('carrier',5)
 
-    console.log('playerHits',playerHits)
-    console.log('playerSunkShips',playerSunkShips)
-    if (playerSunkShips.length === 5) {
-        infoDisplay.textContent = 'You sunk all the computer ships. Congratulations you win!'
-        gameOver = true
-    }
-    if (computerSunkShips.length === 5) {
-        infoDisplay.textContent = 'The computer sunk all your ships. You lose!'
-        gameOver = true
 
-        gameOver = true
-    }
-}
 }
