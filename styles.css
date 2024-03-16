@@ -85,7 +85,7 @@ body{
     font-size: 14px ;
     font-weight: 400;
     color: white;
-
+    
 }
 
 .content .main-text h1{
@@ -93,7 +93,7 @@ body{
     font-weight: 800;
     line-height: 1;
     color: white;
-    margin: 10px 200px 100px 0px;
+    margin: 10px 200px 50px 0px;
 }
 .content .main-text h3{
     font-size:18px;
@@ -108,6 +108,7 @@ body{
     line-height: 1.5;
     font-size:15px;
     margin-bottom: 50px;
+
 }
 .content .main-text a{
     display: inline-block;
@@ -154,6 +155,7 @@ body{
 
 #gamesboard-container {
     transform: scale(2); /* Tăng kích thước lên 25% */
+
     width: 500px;
     display: flex;
     justify-content: space-between;
@@ -164,22 +166,13 @@ body{
         height: 200px;
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-       
-    }
 
+    }
 .block {
-    top: 20px; /* Adjust top position for distance from top */
-    right: 30px; /* Adjust right position for distance from right */
     width: 20px;
     height: 20px;
     box-sizing: border-box;
     border: 1px solid hsla(0,0%,100%,0.5);
-    display: grid;
-    grid-template-rows: repeat(10, 20px);
-    grid-template-columns: repeat(10, 20px);
-    border-radius: 2px;
       
 }
 
@@ -199,16 +192,18 @@ body{
     text-align: right;
 }
 
+
+
+
 .option-container {
     transform: scale(2); /* Tăng kích thước lên 25% */
     width: 500px;
     height: 60px;
+
     background-color: #3f59d0;
     display: flex;
     align-items: center;
     margin: 30px 411px ;
-
-
 }
 #flip-button {
     background-color: #4CAF50; /* Màu nền */
@@ -241,7 +236,6 @@ body{
 
 .destroyer {
     background-color: #003d9f;
-   
 }
 
 .submarine {
@@ -258,7 +252,6 @@ body{
 .carrier{
     background-color: #95c8d8;
 }
-
 .destroyer-preview {
     width: 20px;
     height: 10px;
@@ -301,20 +294,11 @@ body{
 #computer .carrier {
     background-color: #1AA7EC;
 }
-
 .boom{
     background-color: #1AA7EC!important;
     background-image: url('Picture/X.png') ;
     background-size: cover;
 }
-
-
-.Yourturn{
-    background-image: url('Picture/yourturn.gif');
-    background-size: cover;
-    background-position: center;
-}
-
 .Miss{
     background-color: #1AA7EC!important;
     background-image: url('Picture/Hole.png');
