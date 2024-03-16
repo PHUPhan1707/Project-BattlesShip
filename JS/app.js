@@ -147,14 +147,15 @@ function highlightArea(startIndex,ship)
     const {shipBlocks,valid,notTaken}=getValidity(allBoardBlocks,isHoriztonal,startIndex,ship)
 
     if(valid && notTaken){
-        shipBlocks.forEach(shipBlock=>{
-            shipBlock.classList.add('hover')
-            setTimeout(()=> shipBlock.classList.remove('hover'),500)
-        })
-    }
+      shipBlocks.forEach(shipBlock=>{
+        shipBlock.classList.add('hover')
+        setTimeout(()=> shipBlock.classList.remove('hover'),500)
+       })
+   }
 }
 
 let gameOver = false
+let hasHitShip = false
 let playerTurn
 function startGame(){
     if (playerTurn === undefined) {
@@ -173,14 +174,26 @@ startButton.addEventListener('click',startGame)
 
 let playerHits=[]
 let computerHits=[]
+let computerMisses=[]
 const playerSunkShips=[]
 const computerSunkShips=[]
 
+function showGIF() {
+    // Create a new image element
+    var gifImage = document.createElement('img');
+
+    // Set the source (URL) of the GIF
+    gifImage.src = 'Picture/yourturn.gif';
+
+
+    // Append the image element to a container in the HTML
+    document.getElementById('gifContainer').appendChild(gifImage);
+}
 
 function handleClick(e){
     if(!gameOver){
         if ( e.target.classList.contains('taken')) {
-            e.target.classList.add('boom')
+            e.target.classList.add('wabam')
             infoDisplay.textContent = 'You hit the computer ship'
             let classes = Array.from(e.target.classList)
             classes = classes.filter(className => className !== 'boom')
@@ -191,7 +204,7 @@ function handleClick(e){
         }
         if (!e.target.classList.contains('taken')){
             infoDisplay.textContent='You missed'
-            e.target.classList.add('Miss')
+            e.target.classList.add('Missyou')
 
         }
         playerTurn= false
@@ -200,14 +213,23 @@ function handleClick(e){
         setTimeout(ComputerGO,3000)
     }
 }
+
+
+function isValidCell(x, y) {
+    return x >= 0 && x < boardSize && y >= 0 && y < boardSize;
+}
+
+function isCellAlreadyAttacked(x, y, attackedCells) {
+    return attackedCells.some(cell => cell[0] === x && cell[1] === y);
+}
+
+
+
 //Define the computers  go
 function ComputerGO() {
     if(!gameOver){
         turnDisplay.textContent='Computer Turn !'
         infoDisplay.textContent='The computer is thinking.....'
-
-
-        let hasHitShip = false; // Biến để kiểm tra xem máy tính đã bắn trúng một tàu chiến hay không
 
         setTimeout(() => {
             // Nếu máy tính chưa bắn trúng tàu chiến
@@ -216,17 +238,17 @@ function ComputerGO() {
                 const allBoardBlocks = document.querySelectorAll('#player div');
                 if (
                     allBoardBlocks[randomGO].classList.contains('taken') &&
-                    allBoardBlocks[randomGO].classList.contains('boom')
+                    allBoardBlocks[randomGO].classList.contains('wabam')
                 ) {
                     // Nếu ô đã được bắn trúng trước đó, gọi lại hàm ComputerGO để chọn ô khác
                     ComputerGO();
                     return;
                 } else if (
                     allBoardBlocks[randomGO].classList.contains('taken') &&
-                    !allBoardBlocks[randomGO].classList.contains('boom')
+                    !allBoardBlocks[randomGO].classList.contains('wabam')
                 ) {
                     // Nếu ô đã được chiếm nhưng chưa bị bắn trúng, đánh dấu là bắn trúng và hiển thị thông báo tương ứng
-                    allBoardBlocks[randomGO].classList.add('boom');
+                    allBoardBlocks[randomGO].classList.add('wabam');
                     infoDisplay.textContent = 'The computer hit your ship !';
                     let classes = Array.from(e.target.classList);
                     classes = classes.filter(className => className !== 'block');
@@ -234,29 +256,59 @@ function ComputerGO() {
                     classes = classes.filter(className => className !== 'taken');
                     computerHits.push(...classes);
                     checkScore('computer', computerHits, computerSunkShips);
-                    hasHitShip = true; // Đặt hasHitShip thành true để chỉ ra rằng máy tính đã bắn trúng
+                    hasHitShip = true;
+                    return;
+                    // Đặt hasHitShip thành true để chỉ ra rằng máy tính đã bắn trúng
                 } else {
                     // Nếu ô chưa được chiếm, đánh dấu là bắn trượt và hiển thị thông báo tương ứng
                     infoDisplay.textContent = 'The computer missed';
-                    allBoardBlocks[randomGO].classList.add('Miss');
+                    allBoardBlocks[randomGO].classList.add('Missyou');
                 }
-            } else {
+            }
+            else {
                 // Nếu máy tính đã bắn trúng tàu chiến, tiếp tục tìm các ô xung quanh ô đã bắn trúng
                 // và thực hiện các hành động tương ứng
                 // Viết mã xử lý tìm các ô xung quanh và thực hiện các hành động tương ứng ở đây
                 // Nếu ô hàng xóm đã được bắn trúng trước đó, tiếp tục tìm ô hàng xóm khác
-// Viết mã xử lý tiếp tục tìm ô hàng xóm khác ở đây
-                let nextAdjacentCell;
-                for (let i = 0; i < adjacentCells.length; i++) {
-                    if (!adjacentCells[i].classList.contains('boom')) {
-                        nextAdjacentCell = adjacentCells[i];
+                // Viết mã xử lý tiếp tục tìm ô hàng xóm khác ở đây
+               
+                let lastHit = computerHits[computerHits.length - 1];
+                let adjacentCells = getAdjacentCells(lastHit[0], lastHit[1]);
+                for (let cell of adjacentCells) {
+                    if (!isCellAlreadyAttacked(cell[0], cell[1], computerHits) && !isCellAlreadyAttacked(cell[0], cell[1], computerMisses)) {
+                        x = cell[0];
+                        y = cell[1];
                         break;
+        
+               
+               
+               
+                // let nextAdjacentCell;
+             //   let adjacentCell = 4;
+               // for (let i = 0; i < adjacentCell; i++) {
+                 //   if (!adjacentCells[i].classList.contains('wabam')) {
+                   //     nextAdjacentCell = adjacentCells[i];
+                   //     break;
                     }
                 }
+            }
+
+    
+            if (player[x][y] !== 0) {
+                // If hit, add to computerHits
+                computerHits.push([x, y]);
+                // If ship is sunk, clear hits
+                if (isShipSunk(player, x, y)) {
+                    computerHits = [];
+                }
+            } else {
+                // If miss, add to computerMisses
+                computerMisses.push([x, y]);
+            }
 
 // Nếu có ô hàng xóm không bị bắn trúng, chọn ô đó và thực hiện các hành động tương ứng
                 if (nextAdjacentCell) {
-                    nextAdjacentCell.classList.add('boom');
+                    nextAdjacentCell.classList.add('wabam');
                     infoDisplay.textContent = 'The computer hit your ship !';
                     let classes = Array.from(nextAdjacentCell.classList);
                     classes = classes.filter(className => className !== 'block');
@@ -271,8 +323,7 @@ function ComputerGO() {
                     ComputerGO();
                 }
 
-            }
-        }, 3000); // Thời gian chờ trước khi máy tính thực hiện bắn
+            }, 1500); // Thời gian chờ trước khi máy tính thực hiện bắn
 
         setTimeout(()=>{
             playerTurn=true
@@ -280,10 +331,55 @@ function ComputerGO() {
             infoDisplay.textContent='Please click on the board to attack the computer ship'
             const allBoardBlocks=document.querySelectorAll('#computer div')
             allBoardBlocks.forEach(block=> block.addEventListener('click',handleClick))
-        },6000)
+        },3000)
     }
+
+    function getAdjacentCells(x, y) {
+        let adjacentCells = [];
+        // Check left, right, top, bottom
+        if (isValidCell(x - 1, y)) adjacentCells.push([x - 1, y]);
+        if (isValidCell(x + 1, y)) adjacentCells.push([x + 1, y]);
+        if (isValidCell(x, y - 1)) adjacentCells.push([x, y - 1]);
+        if (isValidCell(x, y + 1)) adjacentCells.push([x, y + 1]);
+        return adjacentCells;
 }
 
+    function isShipSunk(board, x, y) {
+        let shipLength = board[x][y];
+        let direction = null;
+    // Check if ship is sunk horizontally
+    for (let i = x - 1; i >= 0; i--) {
+        if (board[i][y] === shipLength) {
+            direction = 'horizontal';
+        } else {
+            break;
+        }
+    }
+    for (let i = x + 1; i < boardSize; i++) {
+        if (board[i][y] === shipLength) {
+            direction = 'horizontal';
+        } else {
+            break;
+        }
+    }
+    // Check if ship is sunk vertically
+    for (let i = y - 1; i >= 0; i--) {
+        if (board[x][i] === shipLength) {
+            direction = 'vertical';
+        } else {
+            break;
+        }
+    }
+    for (let i = y + 1; i < boardSize; i++) {
+        if (board[x][i] === shipLength) {
+            direction = 'vertical';
+        } else {
+            break;
+        }
+    }
+    // If ship is sunk in any direction, return true
+    return direction !== null;
+}
 
 
     function checkScore(user,userHits,userSunkShips){
@@ -310,7 +406,7 @@ function ComputerGO() {
     console.log('playerHits',playerHits)
     console.log('playerSunkShips',playerSunkShips)
     if (playerSunkShips.length === 5) {
-        infoDisplay.textContent = 'You sunk all the computer ships.Congratulations you win!'
+        infoDisplay.textContent = 'You sunk all the computer ships. Congratulations you win!'
         gameOver = true
     }
     if (computerSunkShips.length === 5) {
@@ -319,4 +415,5 @@ function ComputerGO() {
 
         gameOver = true
     }
+}
 }
