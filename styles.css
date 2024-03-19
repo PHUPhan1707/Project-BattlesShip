@@ -285,7 +285,9 @@ body{
 #computer .cruiser,
 #computer .battleship,
 #computer .carrier {
-    background-color: #1AA7EC;
+    border: 1px solid hsla(0,0%,100%,0.5);
+    background-color: transparent; /* Đặt màu nền là trong suốt */
+    background-clip: padding-box; /
 }
 .boom{
     background-color: #1AA7EC!important;
