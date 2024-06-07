@@ -1,0 +1,120 @@
+*   [33mf0de055[m[33m ([m[1;36mHEAD -> [m[1;32mCode-Phu[m[33m)[m New update
+[31m|[m[32m\[m  
+[31m|[m [32m|[m *   [33m5be1601[m[33m ([m[1;31morigin/Code-Thanh[m[33m)[m Merge branch 'master' of https://github.com/PHUPhan1707/Project-BattlesShip into Code-Thanh
+[31m|[m [32m|[m [33m|[m[32m\[m  
+[31m|[m [32m|[m [33m|[m[32m/[m  
+[31m|[m [32m|[m[32m/[m[33m|[m   
+[31m|[m [32m|[m * [33mbdfa6ec[m Update styles.css
+[31m|[m [32m|[m [34m|[m * [33m8fc88ff[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m Merge pull request #12 from PHUPhan1707/Code-Phu
+[31m|[m [32m|[m [34m|[m[32m/[m[36m|[m 
+[31m|[m [32m|[m[32m/[m[34m|[m [36m|[m 
+[31m|[m [32m|[m [34m|[m * [33m0df72ce[m[33m ([m[1;31morigin/Code-Phu[m[33m)[m Merge branch 'master' of https://github.com/PHUPhan1707/Project-BattlesShip into Code-Phu
+[31m|[m [32m|[m[31m_[m[34m|[m[31m/[m[32m|[m 
+[31m|[m[31m/[m[32m|[m [34m|[m[32m/[m  
+[31m|[m [32m|[m[32m/[m[34m|[m   
+[31m|[m * [34m|[m   [33m2e2bdc2[m Merge pull request #11 from PHUPhan1707/Code-Phu
+[31m|[m [1;33m|[m[1;34m\[m [34m\[m  
+[31m|[m [1;33m|[m * [34m\[m   [33m4f64d71[m FIX Bug
+[31m|[m [1;33m|[m [1;35m|[m[1;33m\[m [34m\[m  
+[31m|[m [1;33m|[m [1;35m|[m[1;33m/[m [34m/[m  
+[31m|[m [1;33m|[m[1;33m/[m[1;35m|[m [34m|[m   
+* [1;33m|[m [1;35m|[m [34m|[m [33m8b0172d[m FIX background computer ship
+[1;35m|[m[1;33m\[m[1;33m|[m [1;35m|[m [34m|[m 
+[1;35m|[m [1;33m|[m[1;35m/[m [34m/[m  
+[1;35m|[m[1;35m/[m[1;33m|[m [34m|[m   
+[1;35m|[m * [34m|[m   [33m71afab9[m[33m ([m[1;32mmaster[m[33m)[m Merge pull request #10 from PHUPhan1707/Code-Nghi
+[1;35m|[m [33m|[m[34m\[m [34m\[m  
+[1;35m|[m [33m|[m * [34m|[m [33m1103f34[m Them hinh vao game menu pt2
+[1;35m|[m [33m|[m[33m/[m [34m/[m  
+* [33m|[m [34m|[m [33m54264c1[m Merge remote-tracking branch 'origin/master' into Code-Phu
+[35m|[m[33m\[m[33m|[m [34m|[m 
+[35m|[m * [34m|[m [33mb38403f[m them game menu
+[35m|[m * [34m|[m   [33m7eb9049[m Merge branch 'master' of https://github.com/PHUPhan1707/Project-BattlesShip
+[35m|[m [1;31m|[m[1;32m\[m [34m\[m  
+[35m|[m * [1;32m|[m [34m|[m [33m4171db4[m them game menu
+* [1;32m|[m [1;32m|[m [34m|[m   [33m5bab695[m Merge remote-tracking branch 'origin/master' into Code-Phu
+[1;33m|[m[1;32m\[m [1;32m\[m [1;32m\[m [34m\[m  
+[1;33m|[m [1;32m|[m [1;32m|[m[1;32m/[m [34m/[m  
+[1;33m|[m [1;32m|[m[1;32m/[m[1;32m|[m [34m|[m   
+[1;33m|[m * [1;32m|[m [34m|[m [33m00ee29b[m graphics and code update pt.2
+[1;33m|[m [1;32m|[m[1;32m/[m [34m/[m  
+[1;33m|[m * [34m|[m [33mc48f036[m update graphics
+* [1;34m|[m [34m|[m [33mcee97e9[m Change ComputerGo()
+[1;34m|[m [1;34m|[m [34m|[m * [33mde3fa90[m[33m ([m[1;31morigin/Code-nghi[m[33m)[m Them game menu
+[1;34m|[m [1;34m|[m [34m|[m *   [33mabd1633[m Merge branch 'master' into Code-nghi
+[1;34m|[m [1;34m|[m [34m|[m [1;36m|[m[31m\[m  
+[1;34m|[m [1;34m|[m [34m|[m [1;36m|[m * [33m5e6618d[m Them game menu
+[1;34m|[m [1;34m|[m [34m|[m[1;34m_[m[1;36m|[m[1;34m/[m  
+[1;34m|[m [1;34m|[m[1;34m/[m[34m|[m [1;36m|[m   
+[1;34m|[m * [34m|[m [1;36m|[m   [33mada7519[m[33m ([m[1;31morigin/Code-My[m[33m)[m Merge pull request #8 from PHUPhan1707/Code-Phu
+[1;34m|[m [32m|[m[1;34m\[m [34m\[m [1;36m\[m  
+[1;34m|[m [32m|[m[1;34m/[m [34m/[m [1;36m/[m  
+[1;34m|[m[1;34m/[m[32m|[m [34m|[m [1;36m|[m   
+* [32m|[m [34m|[m [1;36m|[m   [33m6439b76[m Merge remote-tracking branch 'origin/Code-Phu' into Code-Phu
+[34m|[m[35m\[m [32m\[m [34m\[m [1;36m\[m  
+[34m|[m * [32m|[m [34m|[m [1;36m|[m [33mfb89e4b[m Desgin button, Scale screen from 100% to 125%
+* [35m|[m [32m|[m [34m|[m [1;36m|[m [33m273afb6[m Desgin button, Scale screen from 100% to 125%
+[35m|[m[35m/[m [32m/[m [34m/[m [1;36m/[m  
+[35m|[m * [34m|[m [1;36m|[m   [33mfbbdf76[m Merge pull request #7 from PHUPhan1707/Code-Phu
+[35m|[m [36m|[m[35m\[m [34m\[m [1;36m\[m  
+[35m|[m [36m|[m[35m/[m [34m/[m [1;36m/[m  
+[35m|[m[35m/[m[36m|[m [34m|[m [1;36m|[m   
+* [36m|[m [34m|[m [1;36m|[m [33m7e63853[m The code is a simple warship shooter(Rule for ComputerGo,Player)
+[1;32m|[m[36m\[m[36m|[m [34m|[m [1;36m|[m 
+[1;32m|[m * [34m|[m [1;36m|[m   [33m30a21d7[m Merge pull request #6 from PHUPhan1707/Code-Nghi
+[1;32m|[m [1;34m|[m[1;35m\[m [34m\[m [1;36m\[m  
+* [1;34m|[m [1;35m\[m [34m\[m [1;36m\[m   [33m66c13e2[m Merge branch 'master' into Code-Phu
+[1;34m|[m[31m\[m [1;34m\[m [1;35m\[m [34m\[m [1;36m\[m  
+[1;34m|[m [31m|[m[1;34m/[m [1;35m/[m [34m/[m [1;36m/[m  
+[1;34m|[m[1;34m/[m[31m|[m [1;35m|[m [34m|[m [1;36m|[m   
+[1;34m|[m * [1;35m|[m [34m|[m [1;36m|[m [33m7dc483c[m Check
+* [31m|[m [1;35m|[m [34m|[m [1;36m|[m   [33mb165a3e[m Merge pull request #5 from PHUPhan1707/Code-Phu
+[32m|[m[33m\[m [31m\[m [1;35m\[m [34m\[m [1;36m\[m  
+[32m|[m * [31m\[m [1;35m\[m [34m\[m [1;36m\[m   [33m903b8ef[m Merge pull request #4 from PHUPhan1707/master
+[32m|[m [34m|[m[32m\[m [31m\[m [1;35m\[m [34m\[m [1;36m\[m  
+[32m|[m [34m|[m[32m/[m [31m/[m [1;35m/[m [34m/[m [1;36m/[m  
+[32m|[m[32m/[m[34m|[m [31m|[m [1;35m|[m [34m/[m [1;36m/[m   
+[32m|[m [34m|[m [31m|[m[34m_[m[1;35m|[m[34m/[m [1;36m/[m    
+[32m|[m [34m|[m[34m/[m[31m|[m [1;35m|[m [1;36m|[m     
+* [34m|[m [31m|[m [1;35m|[m [1;36m|[m   [33m5999985[m Merge pull request #3 from PHUPhan1707/Code-Nghi
+[31m|[m[1;31m\[m [34m\[m [31m\[m [1;35m\[m [1;36m\[m  
+[31m|[m [1;31m|[m[31m_[m[34m|[m[31m/[m [1;35m/[m [1;36m/[m  
+[31m|[m[31m/[m[1;31m|[m [34m|[m [1;35m|[m [1;36m|[m   
+* [1;31m|[m [34m|[m [1;35m|[m [1;36m|[m   [33m7ae35d5[m Merge pull request #2 from PHUPhan1707/Code-Nghi
+[1;32m|[m[1;33m\[m [1;31m\[m [34m\[m [1;35m\[m [1;36m\[m  
+* [1;33m\[m [1;31m\[m [34m\[m [1;35m\[m [1;36m\[m   [33m5e6c50f[m Merge pull request #1 from PHUPhan1707/Code-Nghi
+[34m|[m[1;35m\[m [1;33m\[m [1;31m\[m [34m\[m [1;35m\[m [1;36m\[m  
+[34m|[m [1;35m|[m[34m_[m[1;33m|[m[34m_[m[1;31m|[m[34m/[m [1;35m/[m [1;36m/[m  
+[34m|[m[34m/[m[1;35m|[m [1;33m|[m [1;31m|[m [1;35m|[m [1;36m|[m   
+[34m|[m [1;35m|[m [1;33m|[m [1;31m|[m [1;35m|[m * [33m6b77254[m Them game menu
+[34m|[m [1;35m|[m [1;33m|[m [1;31m|[m [1;35m|[m[1;35m/[m  
+[34m|[m [1;35m|[m [1;33m|[m [1;31m|[m * [33m36cdb83[m[33m ([m[1;31morigin/Code-Nghi[m[33m)[m Add background layout color for gameplay and add logo Battle ship on the left corner
+[34m|[m [1;35m|[m [1;33m|[m [1;31m|[m[1;31m/[m  
+[34m|[m [1;35m|[m [1;33m|[m * [33m9f701e3[m change fonts and total color
+[34m|[m [1;35m|[m [1;33m|[m[1;33m/[m  
+[34m|[m [1;35m|[m * [33m354f346[m Change board color and grid
+[34m|[m [1;35m|[m * [33m9fcadb9[m Add grid for blocks
+[34m|[m [1;35m|[m[1;35m/[m  
+[34m|[m * [33mb3f6c18[m Thay doi empty bg color
+[34m|[m[34m/[m  
+*   [33mbc92fab[m Merge remote-tracking branch 'origin/master'
+[1;36m|[m[31m\[m  
+[1;36m|[m * [33m816fa19[m Code add hightLight ( Animation when move the ship)
+* [31m|[m [33mb16b41b[m Code add hightLight ( Animation when move the ship)
+[31m|[m[31m/[m  
+* [33m0112c76[m COde for ship of player can put in the game board ( thông qua function Dragship,Dropship)
+*   [33m14761fb[m Merge remote-tracking branch 'origin/master'
+[32m|[m[33m\[m  
+[32m|[m * [33m97b3e6f[m Random ship for the computer and make sure it create right role of this game
+* [33m|[m [33md2a5226[m COde for ship of player can put in the game board ( thông qua function Dragship,Dropship)
+[33m|[m[33m/[m  
+*   [33m059a712[m Merge remote-tracking branch 'origin/master'
+[34m|[m[35m\[m  
+[34m|[m * [33me7d17e0[m Create the random the ship of the computer
+* [35m|[m [33mb05e238[m Random ship for the computer and make sure it create right role of this game
+[35m|[m[35m/[m  
+* [33m031dae9[m Create a board-game for player and computer Build fighting arena for 2 teams Change code for function flip() to rotate 360 deg
+* [33md4c7f02[m Create basic web
+* [33m60c1704[m Create basic web
+* [33m62d97a8[m Create basic web
+* [33ma038eda[m Initial commit

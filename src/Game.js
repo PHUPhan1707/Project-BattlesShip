@@ -146,6 +146,7 @@ class Game {
 		Graphics.checkElement(playerGrid);
 		Graphics.checkElement(opponentGrid);
 		Game.initGame();
+		Game.initGame2();
 		Graphics.updateGrid('opponent', opponentGrid);
 		Graphics.updateGrid('player', playerGrid);
 		Graphics.unBlockCells(false);
@@ -158,8 +159,15 @@ class Game {
 		var player = new Player;
 		var opponent = new Opponent;
 		var opponentAI = new OpponentAI;
+ 
+	}
+	static initGame2() {
+		var player = new Player;
+		var opponent = new Opponent;
+		var opponentAIE = new OpponentAIE;
 
 	}
+
 	static startGame() {
 		Player.placeBoats();
 		Opponent.placeBoats();
