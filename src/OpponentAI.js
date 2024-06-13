@@ -14,7 +14,7 @@ class OpponentAI {
 		OpponentAI.directionCode = -1;
 		OpponentAI.testedDirections = [false, false, false, false];
 	}
-	
+
 	static checkForBoat(w, h, dir = -1) {
 		if (OpponentAI.checkIfValidCell(w, h) && Player.grid[w][h] === 1) {
 			OpponentAI.foundBoatCell = true;
@@ -27,7 +27,7 @@ class OpponentAI {
 		}
 		return false;
 	}
-	
+
 	static checkForSunkenBoat(w, h) {
 		if (Player.grid[w][h] === 4) {
 			OpponentAI.foundBoatCell = false;
@@ -37,7 +37,7 @@ class OpponentAI {
 			OpponentAI.testedDirections = [false, false, false, false];
 		}
 	}
-	
+
 	static newRandomCell() {
 		var randomCell = Game.randomCell();
 		while (Player.grid[randomCell[0]][randomCell[1]] !== 0 && Player.grid[randomCell[0]][randomCell[1]] !== 1) {
@@ -45,7 +45,7 @@ class OpponentAI {
 		}
 		return randomCell;
 	}
-	
+
 	static newCellDependingOnDir(dir) {
 		switch(dir) {
 			case 0:
@@ -60,11 +60,11 @@ class OpponentAI {
 				throw 'Invalid direction code';
 		}
 	}
-	
+
 	static checkIfValidCell(w, h) {
 		return !(w < 0 || h < 0 || w >= Game.gridSize || h >= Game.gridSize);
 	}
-	
+
 	static switchDirection() {
 		OpponentAI.lastCell = OpponentAI.firstCell;
 		switch(OpponentAI.directionCode) {
@@ -86,7 +86,7 @@ class OpponentAI {
 				throw 'Invalid directionCode';
 		}
 	}
-	
+
 	static findOutDirection() {
 		var i = 0;
 		while (OpponentAI.testedDirections[i] === true && i <= 3) {
@@ -97,7 +97,7 @@ class OpponentAI {
 		OpponentAI.testedDirections[i] = true;
 		return cell;
 	}
-	
+
 	static giveCell() {
 		if (OpponentAI.lastCell[0] !== -1) {
 			OpponentAI.checkForSunkenBoat(OpponentAI.lastCell[0], OpponentAI.lastCell[1]);
@@ -129,4 +129,5 @@ class OpponentAI {
 		}
 		return cell;
 	}
+
 }

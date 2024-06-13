@@ -13,6 +13,7 @@
 .container {
     margin-top: 100px;
     text-align: center;
+    height: 740px;
 
 }
 #player_grid {
@@ -108,7 +109,7 @@ body{
     height: 100%;
     width: 100%;
     min-height: 100vh;
-    background: radial-gradient( #8fbc57 20%, #259faf);
+    background: radial-gradient( #6ec1f6 20%, #8fe8e8);
     position: relative;
 }
 .main-width{
@@ -122,9 +123,7 @@ body{
     min-height: 100vh;
 
     /*background: radial-gradient(circle, #57b8bc 20%, #259faf);*/
-    background: radial-gradient( #8fbc57 20%, #259faf);
-
-
+    background: radial-gradient( #6ec1f6 20%, #8fe8e8);
     position: relative;
 }
 .hero header .logo h2 a{
@@ -274,5 +273,28 @@ body{
     transform:scale(1.3);
 }
 
+/* CSS để ẩn modal ban đầu */
+.modal {
+    display: none;
+}
+
+/* CSS để thiết lập kiểu của modal */
+.modal-content {
+    background-color: #fefefe;
+    margin: 20% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* CSS cho nút */
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
 
 
