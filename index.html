@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Battleship</title>
@@ -34,7 +33,6 @@
             <div class="logo">
                 <h2><a href="#">BattleShip</a></h2>
             </div>
-
         </header>
         <div class="imagelogo1">
             <img src="Picture/shiplogo.png">
@@ -48,8 +46,6 @@
                 <p>Dive into the thrilling world of Battleship, where strategy meets excitement in a game of naval warfare!</p>
                 <a href="#" id="playNow">Play Now</a>
             </div>
-
-
 
             <style>
                 #target {
@@ -74,40 +70,76 @@
             </div>
 </section >
 
-             <div class="container">
-                <div id="player_grid"></div>
-                <div id="opponent_grid"></div>
-                <br>
-                <div id="message_box">Welcome to battleship.js!<br></div>
+<div class="container">
+    <div id="player_grid"></div>
+    <div id="opponent_grid"></div>
+    <br>
+    <div id="message_box">Welcome to battleship.js!<br></div>
 
+    <div class="name-input">
+        <label for="playerName">Enter your name:</label>
+        <input type="text" id="playerName" placeholder="Your Name">
+        <button id="submitName">Submit</button>
+    </div>
 
-                <div class="controls">
-                    <button id="restart_btn" disabled>Restart game</button>
+    <div class="controls">
+        <button id="restart_btn" disabled>Restart game</button>
+        <button id="start_btn" disabled>Start Game</button>
+    </div>
 
-                    <button id="start_btn">Start Game</button>
-
-                </div>
-                 <div id="startOptionsModal" class="modal">
-                     <div class="modal-content">
-                         <h2>Chọn chế độ</h2>
-                         <button id="easyModeBtn">Dễ</button>
-                         <button id="hardModeBtn">Khó</button>
-                     </div>
-                 </div>
-
-
-
-             </div>
+    <div id="startOptionsModal" class="modal">
+        <div class="modal-content">
+            <h2>Choose Level</h2>
+            <button id="easyModeBtn">Easy</button>
+            <button id="hardModeBtn">Hard</button>
         </div>
     </div>
+</div>
+
 <script>
-    // Bắt sự kiện click vào phần tử có ID là "playNow"
+    // Scroll to start button on "Play Now" click
     document.getElementById('playNow').addEventListener('click', function(event) {
-        event.preventDefault(); // Ngăn chặn hành động mặc định của thẻ a
-        document.getElementById('start_btn').scrollIntoView({ behavior: 'smooth' }); // Cuộn trang đến phần tử có ID là "target" với hiệu ứng mềm mại
+        event.preventDefault();
+        document.getElementById('start_btn').scrollIntoView({ behavior: 'smooth' });
     });
 
+    // Handle name submission
+    document.getElementById('submitName').addEventListener('click', function() {
+        var playerName = document.getElementById('playerName').value;
+        if (playerName) {
+            document.getElementById('message_box').innerText = "Welcome, " + playerName + "! Ready to play Battleship?";
+            document.getElementById('start_btn').disabled = false;
+        } else {
+            alert("Please enter your name.");
+        }
+    });
+
+    // Handle game start
+    document.getElementById('start_btn').addEventListener('click', function() {
+        var playerName = document.getElementById('playerName').value;
+        if (playerName) {
+            // Initialize the game with the player's name
+            startGame(playerName);
+        } else {
+            alert("Please enter your name before starting the game.");
+        }
+    });
+
+    function startGame(playerName) {
+        // Your game start logic here
+        console.log("Starting game for player:", playerName);
+    }
 </script>
+<div id="score_container">
+    <h2>Score: <span id="score">0</span></h2>
+</div>
+<div id="congratsModal" class="modal">
+    <div class="modal-content">
+        <h2>Congratulations!</h2>
+        <p id="congratsMessage"></p>
+        <button id="closeCongratsModal">Close</button>
+    </div>
+</div>
 
 </body>
 </html>
