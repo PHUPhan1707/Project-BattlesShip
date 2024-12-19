@@ -6,7 +6,7 @@ class Game {
 		Game.numBoatTypes = 5;
 		Game.numBoatsPerType = [0, 0, 1, 2, 1, 1];
 		Game.numBoats = Game.getNumBoats();
-		Game.playerScore = 0; // Thêm biến điểm số của người chơi
+		Game.playerScore = 0;
 	}
 
 	static getNumBoats() {
@@ -79,7 +79,7 @@ class Game {
 				boatShot.sink();
 				if (shooter === 'player') {
 					Opponent.numBoatsAlive--;
-					Game.playerScore += 10; // Cộng điểm cho người chơi khi đánh chìm tàu
+					Game.playerScore += 10;
 					document.getElementById('score').innerText = Game.playerScore; // Cập nhật điểm số hiển thị
 				} else {
 					Player.numBoatsAlive--;
@@ -87,8 +87,6 @@ class Game {
 			}
 		}
 	}
-
-
 	static setGridRandomly(gridType) {
 		if (gridType !== 'player' && gridType !== 'opponent') {
 			throw 'Grid must be player or opponent.';
@@ -163,7 +161,7 @@ class Game {
 		var player = new Player;
 		var opponent = new Opponent;
 		var opponentAI = new OpponentAI;
- 
+
 	}
 	static initGame2() {
 		var player = new Player;

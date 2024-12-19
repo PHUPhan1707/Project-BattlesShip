@@ -4,9 +4,10 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+
 }
 body{
-
+    user-select: none;
     overflow-x: hidden;
 }
 .main-width{
@@ -25,6 +26,7 @@ body{
 
     position: relative;
 }
+
 .hero header .logo h2 a{
     display: block;
     font-size: 64px;
@@ -165,9 +167,9 @@ body{
     height: 200px;
     display: flex;
     flex-wrap: wrap;
-    background-image: url(Picture/ocean.gif);
+    background-image: url(Project-BattlesShip/Picture/ocean.gif);
+    user-select: none;
 }
-
 .content .main-text{
     position: relative;
     z-index: 2;
@@ -192,7 +194,7 @@ body{
     transform: scale(2); /* Tăng kích thước lên 25% */
     width: 500px;
     height: 60px;
-
+    user-select: none; /* Ngăn chọn văn bản */
     background-color: #d03f66;
     display: flex;
     align-items: center;
@@ -210,6 +212,7 @@ body{
     margin: 10px 50px 0 161px ; /* Lề bên trong */
     cursor: pointer; /* Con trỏ chuột */
     border-radius: 8px; /* Độ cong của góc */
+
 }
 #start-button{
     background-color: #4CAF50; /* Màu nền */
@@ -291,21 +294,21 @@ body{
 }
 .boom{
     background-color: #1AA7EC!important;
-    background-image: url('Picture/X.png') ;
+    background-image: url('Project-BattlesShip/Picture/X.png') ;
     background-size: cover;
 }
 .Miss{
     background-color: #1AA7EC!important;
-    background-image: url('Picture/Hole.png');
+    background-image: url('Project-BattlesShip/Picture/Hole.png');
     background-size: cover;
 }
 
 .Missyou {
-    background-image: url('Picture/missyou.gif');
+    background-image: url('Project-BattlesShip/Picture/missyou.gif');
     background-size: cover;
     background-position: center;}
 
 .wabam {
-    background-image: url('Picture/boomomg.gif');
+    background-image: url('Project-BattlesShip/Picture/boomomg.gif');
     background-size: cover;
     background-position: center;}

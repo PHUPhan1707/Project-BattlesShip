@@ -104,10 +104,8 @@ class OpponentAI {
 		}
 		if (!OpponentAI.foundBoatCell) {
 			var cell = OpponentAI.newRandomCell();
-			var boat = new Boat('player', 1, 'H', cell[0], cell[1], false);
-			while (!boat.fitsInGrid(false)) {
+			while (Player.grid[cell[0]][cell[1]] !== 0 && Player.grid[cell[0]][cell[1]] !== 1) {
 				cell = OpponentAI.newRandomCell();
-				boat = new Boat('player', 1, 'H', cell[0], cell[1], false);
 			}
 			OpponentAI.checkForBoat(cell[0], cell[1]);
 		} else {
@@ -117,17 +115,24 @@ class OpponentAI {
 					cell = OpponentAI.findOutDirection();
 				}
 			} else {
+				// If the direction is known, continue attacking in that direction
 				var cell = OpponentAI.newCellDependingOnDir(OpponentAI.directionCode);
 				if (!OpponentAI.checkIfValidCell(cell[0], cell[1]) || Player.grid[cell[0]][cell[1]] === 2) {
+					// If the cell is invalid or already hit, switch direction and try again
 					OpponentAI.switchDirection();
 					cell = OpponentAI.newCellDependingOnDir(OpponentAI.directionCode);
 				}
+				// Check if the cell is not part of the boat or already hit, then switch direction
 				if (!OpponentAI.checkForBoat(cell[0], cell[1], OpponentAI.directionCode)) {
 					OpponentAI.switchDirection();
 				}
 			}
+
+
 		}
 		return cell;
 	}
+
+
 
 }

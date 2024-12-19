@@ -4,20 +4,18 @@ var score = 0;
 document.addEventListener('DOMContentLoaded', function () {
 	var startBtn = document.getElementById('start_btn');
 
-	// Lắng nghe sự kiện click handler cho nút "Bắt đầu"
+
 	startBtn.addEventListener('click', function () {
 		// Hiển thị modal chọn chế độ khi người chơi nhấn nút "Bắt đầu"
 		document.getElementById('startOptionsModal').style.display = 'block';
 	});
 
-	// Lắng nghe sự kiện click trên nút "Dễ"
 	document.getElementById('easyModeBtn').addEventListener('click', function () {
 		document.getElementById('startOptionsModal').style.display = 'none'; // Ẩn modal
 
-		chooseOpponentAI('easy'); // Chọn AI dễ
+		chooseOpponentAI('easy');
 	});
 
-	// Lắng nghe sự kiện click trên nút "Khó"
 	document.getElementById('hardModeBtn').addEventListener('click', function () {
 		document.getElementById('startOptionsModal').style.display = 'none'; // Ẩn modal
 

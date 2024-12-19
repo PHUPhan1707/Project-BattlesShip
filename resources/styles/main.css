@@ -5,7 +5,7 @@
     --main-touched: #ff4500cc;
     --main-sunken: red;
     --background-sunken:
-            url('Picture/boomomg.gif');
+            url('Project-BattlesShip/Picture/boomomg.gif');
 
 
 }
@@ -20,7 +20,7 @@
     float: left;
     margin-left: 100px;
     margin-right: 60px;
-
+    user-select: none;
 }
 .grid_btn {
     height: 32.4px; /* Giảm 10% từ 36px */
@@ -33,7 +33,7 @@
     padding: .375rem .75rem;
     font-size: 1rem;
     margin: 2px;
-
+    user-select: none;
 }
 
 .grid_btn[data-type="info"] {

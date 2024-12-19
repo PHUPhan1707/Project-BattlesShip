@@ -19,7 +19,6 @@ class OpponentAIE {
         }
         return false;
     }
-
     static checkForSunkenBoat(w, h) {
         if (Player.grid[w][h] === 4) {
             OpponentAIE.foundBoatCell = false;
@@ -29,7 +28,6 @@ class OpponentAIE {
             OpponentAIE.testedDirections = [false, false, false, false];
         }
     }
-
     static newRandomCell() {
         var randomCell = Game.randomCell();
         while (Player.grid[randomCell[0]][randomCell[1]] !== 0 && Player.grid[randomCell[0]][randomCell[1]] !== 1) {
@@ -37,11 +35,9 @@ class OpponentAIE {
         }
         return randomCell;
     }
-
     static checkIfValidCell(w, h) {
         return !(w < 0 || h < 0 || w >= Game.gridSize || h >= Game.gridSize);
     }
-
     static giveCell() {
         if (OpponentAIE.lastCell[0] !== -1) {
             OpponentAIE.checkForSunkenBoat(OpponentAIE.lastCell[0], OpponentAIE.lastCell[1]);

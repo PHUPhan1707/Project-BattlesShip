@@ -18,7 +18,6 @@ class Boat {
 			this.setInfoByCoords();
 		}
 	}
-
 	setInfoByCoords() {
 		for (var i = 0; i < Game.numBoatTypes; i++) {
 			for (var j = 0; j < Game.numBoatsPerType[i+1]; j++) {
@@ -52,24 +51,28 @@ class Boat {
 		var stage = -1, i = 0, j = 0;
 
 		while (stage < 2) {
-			for (var k = -1; k <= this.size; k++) {
-				if (this.direction === 'H') {
-					i = k;
-					j = stage;
-				} else {
-					i = stage;
-					j = k;
+			for (var k = 0; k <= this.size; k++) {
+				var x = this.direction === 'H' ? this.w + k : this.w;
+				var y = this.direction === 'H' ? this.h : this.h + k;
+
+				if (x < 0 || y < 0 || x >= Game.gridSize || y >= Game.gridSize) {
+					return false; // Vị trí nằm ngoài lưới
 				}
-				var x = this.w+i;
-				var y = this.h+j;
-				if (x < Game.gridSize && y < Game.gridSize && x >= 0 && y >= 0 && ((considerUntouchedBoats && this.grid[x][y] !== 0) || (!considerUntouchedBoats && (this.grid[x][y] === 3 || this.grid[x][y] === 4)))) {
+
+				// Kiểm tra chỉ các ô tàu sẽ chiếm
+				if ((considerUntouchedBoats && this.grid[x][y] !== 0) ||
+					(!considerUntouchedBoats && (this.grid[x][y] === 3 || this.grid[x][y] === 4))) {
 					return false;
 				}
 			}
+
 			stage++;
 		}
 		return true;
 	}
+
+
+
 
 	sink() {
 		if (this.boatNum === null) {

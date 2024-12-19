@@ -68,7 +68,7 @@
                 <a href="#"><i class="fa-brands fa-android"></i></a>
                 <a href="#"><i class="fa-brands fa-playstation"></i></a>
             </div>
-</section >
+    </section >
 
 <div class="container">
     <div id="player_grid"></div>
@@ -97,13 +97,11 @@
 </div>
 
 <script>
-    // Scroll to start button on "Play Now" click
+
     document.getElementById('playNow').addEventListener('click', function(event) {
         event.preventDefault();
         document.getElementById('start_btn').scrollIntoView({ behavior: 'smooth' });
     });
-
-    // Handle name submission
     document.getElementById('submitName').addEventListener('click', function() {
         var playerName = document.getElementById('playerName').value;
         if (playerName) {
@@ -113,8 +111,6 @@
             alert("Please enter your name.");
         }
     });
-
-    // Handle game start
     document.getElementById('start_btn').addEventListener('click', function() {
         var playerName = document.getElementById('playerName').value;
         if (playerName) {
@@ -140,6 +136,7 @@
         <button id="closeCongratsModal">Close</button>
     </div>
 </div>
+
 
 </body>
 </html>
